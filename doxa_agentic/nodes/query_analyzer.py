@@ -1,6 +1,6 @@
 # query_analyzer node
 
-
+import os
 from langchain_mistralai import ChatMistralAI
 from pydantic import BaseModel
 from state import TicketState
@@ -10,6 +10,8 @@ from schemas import QueryAnalysis
 llm = ChatMistralAI(
     model="mistral-small-latest" , 
     temperature=0,
+    api_key=os.getenv("MISTRAL_API_KEY")
+
 )
 structured_llm = llm.with_structured_output(QueryAnalysis)
 
