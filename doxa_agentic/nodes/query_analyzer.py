@@ -26,7 +26,7 @@ def query_analyzer(state : TicketState) -> dict :
 
     prompt = f"{system_prompt}\n\n Subject : {subject} \ndescription : {description} "
 
-    result = llm.invoke(prompt)
+    result = structured_llm.invoke(prompt)
 
     return{
         "summary": result.summary,
