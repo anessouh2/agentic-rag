@@ -1,1 +1,4 @@
-# solution_finder node
+# solution_finder node#
+
+from schemas import RetrievedDoc
+
